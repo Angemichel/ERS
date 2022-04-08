@@ -16,7 +16,6 @@ public class ErsController {
 		ArrayList<Employee> eList = service.getAllEmployee();
 		ctx.json(eList);
 		
-		
 	};
 
 }
