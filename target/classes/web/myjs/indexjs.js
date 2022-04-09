@@ -21,46 +21,78 @@ else
 
 }
 
+
 function getall(){
-	window.location.href = "http://localhost:8080/em";
+	//window.location.href = "http://localhost:8080/em";
 	//window.location.href = "http://localhost:8080/empl";
 	//document.write("Let's see !!!'");
+	window.location.href = "allresquests.html";
 	fetch('http://localhost:8080/em')
 	.then(response => response.json())
-	.then(data => console.log(data));
+	.then(json=> displayData(json))
+	.catch(err => console.log('Request Failed', err));
 	
 }
 
-async function totable(url, table){
-	const tableHead = table.querySelector("thead");
-	const tableBody = table.querySelector("tbody");
-	const reponse = await fetch(url);
-	
-	const {headers,rows} = await reponse.json();
-	
-	tableHead.innerHTML = "<tr></tr>";
-	tableBody.innerHTML = "";
-	
-	for (const headerText of headers) {
-		const headerElement = document.createElement("th");
-		
-		header.Element.textContent = headerText;
-		tableHead.querySelector("tr").appendChild(headElement);
-	}
-	
-	for (const row of rows) {
-		const rowElement = document.createElement("tr");
-		
-		for (const cellText of row){
-			const cellElement = document.createElment("td");
-			
-			cellElement.textContent = cellText;
-			rowElement.appendChild(rowElement);
-		}
-		tableBody.appendChild(rowElement);
-	}
-	
+
+function getit(){
+	//window.location.href = "http://localhost:8080/em";
+	//window.location.href = "http://localhost:8080/empl";
+	//document.write("Let's see !!!'");
+	//window.location.href = "allresquests.html";
+	fetch('http://localhost:8080/em')
+	.then(response => response.json())
+	.then(json=> displayData(json))
+	.catch(err => console.log('Request Failed', err));
 	
 }
 
-totable("http://localhost:8080/em", document.querySelector("table"));
+function displayData(response) {
+    //var dataSection = document.getElementById('allDataDiv');
+    var tabl = document.getElementById('allDataDiv');
+    
+   //alert(response.length)
+   //var list=document.createElement("ul");
+   
+   	//var list=document.createElement("tr");
+   	
+   	
+   for(i=0;i<response.length;i++){
+    //var item=document.createElement("li");
+     //var item=document.createElement("td");
+     
+ 
+	 //item.innerHTML=response[i].name +"     "+response[i].amount+"     "+response[i].reason+"     "+response[i].status;
+		
+        var row = tabl.insertRow(i)
+        
+	    var cel1 = row.insertCell(0);
+	    var cel2 = row.insertCell(1);
+	    var cel3 = row.insertCell(2);
+	    var cel4 = row.insertCell(3);
+	    cel1.innerHTML = response[i].name;
+	    cel2.innerHTML = response[i].amount;
+	    cel3.innerHTML = response[i].reason;
+	    cel4.innerHTML = response[i].status;
+	    
+	    
+
+        
+       //alert(response[i].id +" "+response[i].name);
+       /*
+      	 item.innerHTML= response[i].name;
+      	 
+         item.innerHTML= response[i].amount;
+         
+         item.innerHTML= response[i].reason;
+         
+         item.innerHTML= response[i].status;
+         */
+        
+        //list.appendChild(item);
+   }
+  
+   //dataSection.appendChild(list);
+   tabl;
+   
+}
