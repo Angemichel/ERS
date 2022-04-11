@@ -6,5 +6,7 @@ import com.revature.p1.app.Employee;
 
 public interface ErsServiceInt {
 	ArrayList<Employee>getAllEmployee();
+	
+	Employee postEmployee(Employee e1);
 
 }

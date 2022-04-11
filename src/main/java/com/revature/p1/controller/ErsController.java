@@ -17,5 +17,10 @@ public class ErsController {
 		ctx.json(eList);
 		
 	};
+	
+	public static Handler postEmployee = ctx ->{
+		Employee e1 = ctx.bodyAsClass(Employee.class);
+		service.postEmployee(e1);
+	};
 
 }

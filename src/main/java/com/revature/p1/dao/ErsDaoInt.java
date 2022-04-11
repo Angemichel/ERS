@@ -7,4 +7,6 @@ import com.revature.p1.app.Employee;
 public interface ErsDaoInt {
 	
 	ArrayList<Employee>getAllEmployee();
+	
+	Employee postEmployee(Employee e1);
 }

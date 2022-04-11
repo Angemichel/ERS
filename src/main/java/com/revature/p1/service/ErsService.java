@@ -14,5 +14,10 @@ public class ErsService implements ErsServiceInt{
 		// TODO Auto-generated method stub
 		return dao.getAllEmployee();
 	}
+	@Override
+	public Employee postEmployee(Employee e1) {
+		// TODO Auto-generated method stub
+		return dao.postEmployee(e1);
+	}
 
 }

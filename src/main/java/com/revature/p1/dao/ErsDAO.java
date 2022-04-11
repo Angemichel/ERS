@@ -47,4 +47,27 @@ public class ErsDAO implements ErsDaoInt {
 		return eList;
 	}
 
+	@Override
+	public Employee postEmployee(Employee e1) {
+		// TODO Auto-generated method stub
+		PreparedStatement pstmt;
+		Connection conn = Utils.createConnection();
+		
+		try {
+			pstmt = conn.prepareStatement("insert into employee(id,employee_name,request_amount,reason,status) values(default,?,?,?,?)");
+			pstmt.setString(1,e1.getName());
+			pstmt.setInt(2,e1.getAmount());
+			pstmt.setString(3, e1.getReason());
+			pstmt.setString(4, e1.getStatus());
+			
+			pstmt.execute();
+			pstmt.close();
+			
+		} catch (SQLException e) 
+		{
+			e.printStackTrace();
+	}
+		return null;
+	}
+
 }

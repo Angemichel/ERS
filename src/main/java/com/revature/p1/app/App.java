@@ -16,7 +16,7 @@ public class App {
 		
 		app.get("/em", ErsController.getAllEmployee);
 		
-		
+		app.post("/employees", ErsController.postEmployee);
 		
 	}
 

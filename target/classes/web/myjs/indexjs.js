@@ -96,3 +96,32 @@ function displayData(response) {
    tabl;
    
 }
+
+function newRequest() {
+	window.location.href = "newrequest.html";
+	
+}
+
+function postOne(){
+	var Ename = document.getElementById('Rname');
+	var Eamount = document.getElementById('Ramount');
+	var Ereason = document.getElementById('Rreason');
+	var Estatus = document.getElementById('Rstatus');
+	//console.log(Ename.value);
+	
+	fetch('http://localhost:8080/employees',{
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify({
+			name: Ename.value,
+			amount: Eamount.value,
+			reason: Ereason.value,
+			status: Estatus.value
+		})
+	})
+}
+
+function afterRequest() {
+	window.location.href = "afterrequest.html";
+	
+}
