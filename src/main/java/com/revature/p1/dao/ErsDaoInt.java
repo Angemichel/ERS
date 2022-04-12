@@ -9,4 +9,8 @@ public interface ErsDaoInt {
 	ArrayList<Employee>getAllEmployee();
 	
 	Employee postEmployee(Employee e1);
+	
+	Employee updateEmployee(String name, String reason, String status, Employee e1);
+	
+	Employee updateRequest(Employee e1);
 }

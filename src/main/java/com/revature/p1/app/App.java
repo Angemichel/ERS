@@ -18,6 +18,10 @@ public class App {
 		
 		app.post("/employees", ErsController.postEmployee);
 		
+		app.put("/employees/status/{name}/{reason}/{status}", ErsController.updateEmployee);
+		
+		app.put("/employees/status", ErsController.updateRequest);
+		
 	}
 
 }

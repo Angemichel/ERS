@@ -19,5 +19,15 @@ public class ErsService implements ErsServiceInt{
 		// TODO Auto-generated method stub
 		return dao.postEmployee(e1);
 	}
+	@Override
+	public Employee updateEmployee(String name, String reason, String status, Employee e1) {
+		// TODO Auto-generated method stub
+		return dao.updateEmployee(name, reason, status, e1);
+	}
+	@Override
+	public Employee updateRequest(Employee e1) {
+		// TODO Auto-generated method stub
+		return dao.updateRequest(e1);
+	}
 
 }

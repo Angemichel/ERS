@@ -54,11 +54,11 @@ public class ErsDAO implements ErsDaoInt {
 		Connection conn = Utils.createConnection();
 		
 		try {
-			pstmt = conn.prepareStatement("insert into employee(id,employee_name,request_amount,reason,status) values(default,?,?,?,?)");
+			pstmt = conn.prepareStatement("insert into employee(id,employee_name,request_amount,reason,status) values(default,?,?,?,'Pending')");
 			pstmt.setString(1,e1.getName());
 			pstmt.setInt(2,e1.getAmount());
 			pstmt.setString(3, e1.getReason());
-			pstmt.setString(4, e1.getStatus());
+			//pstmt.setString(4, e1.getStatus());
 			
 			pstmt.execute();
 			pstmt.close();
@@ -68,6 +68,50 @@ public class ErsDAO implements ErsDaoInt {
 			e.printStackTrace();
 	}
 		return null;
+		//return e1;
+		
 	}
 
+	@Override
+	public Employee updateEmployee(String name, String reason, String status,Employee e1) {
+		// TODO Auto-generated method stub
+		Connection conn = Utils.createConnection();
+		
+		try {
+			PreparedStatement pstmt;
+			pstmt = conn.prepareStatement("update employee set id = default,status=? where employee_name=? and reason=?");
+			pstmt.setString(1,status);
+			pstmt.setString(2,name);
+			pstmt.setString(3,reason);
+			pstmt.execute();
+			pstmt.close();
+			
+		} catch (SQLException e) 
+		{
+			e.printStackTrace();	
+			
+	}
+		return e1;
+	}
+
+	@Override
+	public Employee updateRequest(Employee e1) {
+		// TODO Auto-generated method stub
+Connection conn = Utils.createConnection();
+		
+		try {
+			PreparedStatement pstmt;
+			pstmt = conn.prepareStatement("update employee set id = default,status=? where employee_name=? and reason=?");
+			pstmt.setString(1,e1.getStatus());
+			pstmt.setString(2,e1.getName());
+			pstmt.setString(3,e1.getReason());
+			pstmt.execute();
+			pstmt.close();
+			
+		} catch (SQLException e) 
+		{
+			e.printStackTrace();	
+	}
+		return e1;
+	}
 }

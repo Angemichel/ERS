@@ -106,7 +106,6 @@ function postOne(){
 	var Ename = document.getElementById('Rname');
 	var Eamount = document.getElementById('Ramount');
 	var Ereason = document.getElementById('Rreason');
-	var Estatus = document.getElementById('Rstatus');
 	//console.log(Ename.value);
 	
 	fetch('http://localhost:8080/employees',{
@@ -115,8 +114,8 @@ function postOne(){
 		body: JSON.stringify({
 			name: Ename.value,
 			amount: Eamount.value,
-			reason: Ereason.value,
-			status: Estatus.value
+			reason: Ereason.value
+		
 		})
 	})
 }
@@ -124,4 +123,8 @@ function postOne(){
 function afterRequest() {
 	window.location.href = "afterrequest.html";
 	
+}
+
+function goBack(){
+	window.location.href = "employee.html";
 }
