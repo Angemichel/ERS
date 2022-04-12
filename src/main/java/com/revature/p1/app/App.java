@@ -1,8 +1,5 @@
 package com.revature.p1.app;
 
-
-
-
 import com.revature.p1.controller.ErsController;
 
 import io.javalin.Javalin;
@@ -18,7 +15,7 @@ public class App {
 		
 		app.post("/employees", ErsController.postEmployee);
 		
-		app.put("/employees/status/{name}/{reason}/{status}", ErsController.updateEmployee);
+		//app.put("/employees/status/{name}/{reason}/{status}", ErsController.updateEmployee);
 		
 		app.put("/employees/status", ErsController.updateRequest);
 		

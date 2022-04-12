@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Reply To Request</title>
+<script type="text/javascript" src="myjs/indexjs.js"></script>
+<script type="text/javascript" src="myjs/secondjs.js"></script>
+</head>
+<body onload="getit()">
+<div >Result Goes Here</div>
+<table border ="5" id="allDataDiv">
+<tr>
+<th>Name</th>
+<th>Amount</th>
+<th>Reason</th>
+<th>Status</th>
+</tr>
+</table>
+<br><br>
+
+<h3>Fill Request Response Form</h3>
+<form>
+<label for="ERname">Enter Name of Employee:</label><br>
+  <input type="text" id="ERname"><br>
+  <label for="ERreason">Enter Employee Request Reason:</label><br>
+  <input type="text" id="ERreason" ><br>
+    <label for="ERsatus">Approved or Denied:</label><br>
+  <input type="text" id="ERstatus" ><br>
+  <input type="submit" value="Submit" onclick="putRequest()"> 
+</form>
+</body>
+</html>
