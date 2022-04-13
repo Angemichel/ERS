@@ -26,6 +26,8 @@ public class GetTests {
 		
 		ArrayList<Employee> l2 = dao.getAllEmployee();
 		Assertions.assertEquals(l1.get(0).getName(),l2.get(0).getName());
+	
+		//Try assertEqualsAll
 	}
 
 }

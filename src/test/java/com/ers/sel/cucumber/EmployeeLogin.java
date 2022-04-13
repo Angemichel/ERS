@@ -28,7 +28,7 @@ public class EmployeeLogin {
 		WebElement uname = driver.findElement(By.id("username"));
 		WebElement password = driver.findElement(By.id("password"));
 		uname.sendKeys("a");
-		uname.sendKeys("b");
+		password.sendKeys("b");
 		System.out.println("User enters Username and Password");
 	}
 

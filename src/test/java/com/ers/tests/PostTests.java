@@ -11,7 +11,7 @@ public class PostTests {
 	
 	@Test
 	public void EmployeeTest() {
-		Employee e1 = new Employee ("Kevin Durant",350,"Health","Pending");
+		Employee e1 = new Employee ("Kevin Durant",350,"Health","");
 		Employee e2 = ed.postEmployee(e1);
 		
 		Assertions.assertEquals(e1.getName(), e2.getName());
