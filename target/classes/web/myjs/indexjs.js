@@ -27,10 +27,11 @@ function getall(){
 	//window.location.href = "http://localhost:8080/empl";
 	//document.write("Let's see !!!'");
 	window.location.href = "allresquests.html";
-	fetch('http://localhost:8080/em')
-	.then(response => response.json())
-	.then(json=> displayData(json))
-	.catch(err => console.log('Request Failed', err));
+	
+	//fetch('http://localhost:8080/em')
+	//.then(response => response.json())
+	//.then(json=> displayData(json))
+	//.catch(err => console.log('Request Failed', err));
 	
 }
 
