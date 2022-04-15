@@ -1,16 +1,28 @@
 /**
  * 
  */
+
  function validate()
 {
 var username=document.getElementById("username").value;
 var password=document.getElementById("password").value;
-if(username=="a"&& password=="b" && document.getElementById("employee").checked == true )
+sessionStorage.setItem("User", username);
+if(username=="Ange"&& password=="qwe" && document.getElementById("employee").checked == true )
 {
         //window.open("employee.html");
         window.location.href = "employee.html";
+        
     
-} else if (username=="a" && password=="b" && document.getElementById("manager").checked == true){ 
+} else if (username=="Kevin Durant" && password=="a" && document.getElementById("employee").checked == true){ 
+    //window.open("manager.html");
+    //window.location.href = "manager.html";
+    window.location.href = "employee.html";
+}
+else if (username=="Steve" && password=="Nash" && document.getElementById("manager").checked == true){ 
+    //window.open("manager.html");
+    window.location.href = "manager.html";
+    
+}else if (username=="S" && password=="Kerr" && document.getElementById("manager").checked == true){ 
     //window.open("manager.html");
     window.location.href = "manager.html";
 }
@@ -129,3 +141,27 @@ function afterRequest() {
 function goBack(){
 	window.location.href = "employee.html";
 }
+
+function getone(){
+	//window.location.href = "http://localhost:8080/em";
+	//window.location.href = "http://localhost:8080/empl";
+	//document.write("Let's see !!!'");
+	//window.location.href = "allresquests.html";
+	//var usern = window.opener.document.getElementById("username").value;
+	fetch('http://localhost:8080/emp',{
+		method: 'GET',
+		headers: {'Content-Type': 'application/json'},
+		body: JSON.stringify({
+			name: 'Ange',
+			amount: '',
+			status: ''
+			
+	})
+	})
+	.then(response => response.json())
+	.then(json=> displayData(json))
+	.catch(err => console.log('Request Failed', err));
+	
+}
+
+

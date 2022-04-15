@@ -2,6 +2,7 @@ package com.revature.p1.controller;
 
 import java.util.ArrayList;
 
+import com.revature.p1.app.Account;
 import com.revature.p1.app.Employee;
 import com.revature.p1.service.ErsService;
 import com.revature.p1.service.ErsServiceInt;
@@ -38,5 +39,42 @@ public class ErsController {
 		
 		service.updateRequest(e1);
 	};
+	
+	public static Handler getAccount = ctx ->{
+		
+		ArrayList<Account> aList = new ArrayList<Account>();
+		
+		Account a1 = ctx.bodyAsClass(Account.class);
+		
+		aList = service.getAccount(a1);
+		
+		ctx.json(aList);
+		
+		
+	};
+	
+	public static Handler getOneEmployee = ctx ->{
+		Employee e1 = ctx.bodyAsClass(Employee.class);
+		
+		ArrayList<Employee> eList = service.getOneEmployee(e1);
+		ctx.json(eList);
+		
+	};
 
+	public static Handler getEmployee = ctx ->{
+		String name = ctx.pathParam("name");
+		
+		ArrayList<Employee> eList = new ArrayList<Employee>();
+		eList = service.getEmployee(name);
+		
+		ctx.json(eList);
+		
+	};
+	
+	public static Handler getPending = ctx ->{
+		ArrayList<Employee> eList = service.getPending();
+		ctx.json(eList);
+		
+	};
+	
 }

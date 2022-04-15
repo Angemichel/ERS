@@ -2,6 +2,7 @@ package com.revature.p1.service;
 
 import java.util.ArrayList;
 
+import com.revature.p1.app.Account;
 import com.revature.p1.app.Employee;
 
 public interface ErsServiceInt {
@@ -12,4 +13,12 @@ public interface ErsServiceInt {
 	Employee updateEmployee(String name, String reason, String status, Employee e1);
 
 	Employee updateRequest(Employee e1);
+	
+	ArrayList<Account>getAccount(Account a1);
+	
+	ArrayList<Employee>getOneEmployee(Employee e1);
+	
+	ArrayList<Employee>getEmployee(String name);
+	
+	ArrayList<Employee>getPending();
 }

@@ -19,6 +19,14 @@ public class App {
 		
 		app.put("/employees/status", ErsController.updateRequest);
 		
+		app.get("/code", ErsController.getAccount);
+		
+		//app.get("/emp", ErsController.getOneEmployee);
+		
+		app.get("/emp/{name}", ErsController.getEmployee);
+		
+		app.get("/pending", ErsController.getPending);
+		
 	}
 
 }
