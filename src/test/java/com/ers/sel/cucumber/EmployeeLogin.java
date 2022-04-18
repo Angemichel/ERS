@@ -1,5 +1,7 @@
 package com.ers.sel.cucumber;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -26,9 +28,12 @@ public class EmployeeLogin {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
 		WebElement uname = driver.findElement(By.id("username"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
 		WebElement password = driver.findElement(By.id("password"));
-		uname.sendKeys("a");
-		password.sendKeys("b");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
+		uname.sendKeys("Kyrie Irving");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
+		password.sendKeys("ki");
 		System.out.println("User enters Username and Password");
 	}
 
@@ -36,9 +41,13 @@ public class EmployeeLogin {
 	public void user_selects_employee_button() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
 		WebElement empBtn = driver.findElement(By.id("employee"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
 		empBtn.click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
 		WebElement loginBtn = driver.findElement(By.id("submit"));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000000));
 		loginBtn.click();
 		System.out.println("::: Login");
 	}
@@ -48,6 +57,6 @@ public class EmployeeLogin {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
 		System.out.println("Login Successful ...");
-		driver.quit();
+		//driver.quit();
 	}
 }

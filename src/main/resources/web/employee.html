@@ -9,9 +9,41 @@
 </head>
 <body >
 <div class="w-50 mx-auto">
+<style>
+table {
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color:#808080;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #808080;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+</style>
+<div class = "sidenav">
+</div>
 <h3>Employee Page</h3>
 <button type="button" value="View All Requests"  onclick="gotoemp()">View All Request</button>
 <button type="button" value="Create New Request" id="NewRequest" onclick="newRequest()">Create New Request</button>
+<br><br><br><br><br><br><br><br><br><br> 
+ <button type="button" value="GoBack"  onclick="gotologin()">Go Back to Login Page</button>
  </div> 
 </body>
 </html>

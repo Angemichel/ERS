@@ -27,10 +27,10 @@ public class AnswerRequest {
 	public void manager_page_is_displayed() {
 		WebElement uname = driver.findElement(By.id("username"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
-		uname.sendKeys("a");
+		uname.sendKeys("Steve Nash");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
 		WebElement password = driver.findElement(By.id("password"));
-		password.sendKeys("b");
+		password.sendKeys("sn");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
 		System.out.println("::: Login");
 	}
@@ -56,11 +56,11 @@ public class AnswerRequest {
 		WebElement ERname = driver.findElement(By.id("ERname"));
 		WebElement ERreason = driver.findElement(By.id("ERreason"));
 		WebElement ERstatus = driver.findElement(By.id("ERstatus"));
-		ERname.sendKeys("Ange");
+		ERname.sendKeys("Michel");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
-		ERreason.sendKeys("Car");
+		ERreason.sendKeys("Health");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
-		ERstatus.sendKeys("Denied");
+		ERstatus.sendKeys("Approved");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));
 		WebElement subBtn = driver.findElement(By.id("requestSub"));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(200000));

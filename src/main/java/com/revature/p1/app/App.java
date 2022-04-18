@@ -15,13 +15,13 @@ public class App {
 		
 		app.post("/employees", ErsController.postEmployee);
 		
-		//app.put("/employees/status/{name}/{reason}/{status}", ErsController.updateEmployee);
+		
 		
 		app.put("/employees/status", ErsController.updateRequest);
 		
-		app.get("/code", ErsController.getAccount);
+		//app.get("/code", ErsController.getAccount);
 		
-		//app.get("/emp", ErsController.getOneEmployee);
+		
 		
 		app.get("/emp/{name}", ErsController.getEmployee);
 		

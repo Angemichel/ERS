@@ -72,27 +72,7 @@ public class ErsDAO implements ErsDaoInt {
 		
 	}
 
-	@Override
-	public Employee updateEmployee(String name, String reason, String status,Employee e1) {
-		// TODO Auto-generated method stub
-		Connection conn = Utils.createConnection();
-		
-		try {
-			PreparedStatement pstmt;
-			pstmt = conn.prepareStatement("update employee set id = default,status=? where employee_name=? and reason=?");
-			pstmt.setString(1,status);
-			pstmt.setString(2,name);
-			pstmt.setString(3,reason);
-			pstmt.execute();
-			pstmt.close();
-			
-		} catch (SQLException e) 
-		{
-			e.printStackTrace();	
-			
-	}
-		return e1;
-	}
+	
 
 	@Override
 	public Employee updateRequest(Employee e1) {
@@ -167,40 +147,7 @@ Connection conn = Utils.createConnection();
 		return aList;
 	}
 
-	@Override
-	public ArrayList<Employee> getOneEmployee(Employee e1) {
-		// TODO Auto-generated method stub
-		PreparedStatement pstmt;
-		ResultSet rs;
-		Connection conn = Utils.createConnection();
-		String selectAllEmployee = "select * from employee where employee_name=?";
 	
-		ArrayList<Employee> eList = new ArrayList<Employee>();
-		
-		
-		try {
-			pstmt = conn.prepareStatement(selectAllEmployee);
-			pstmt.setString(1, e1.getName());
-			rs = pstmt.executeQuery();
-			Employee emp;
-			
-			while(rs.next()) {
-				String name = rs.getString("employee_name");
-				int amount = rs.getInt("request_amount");
-				String reason = rs.getString("reason");
-				String status = rs.getString("status");
-				emp = new Employee(name,amount,reason,status);
-				eList.add(emp);
-				
-			}
-			rs.close();
-			pstmt.close();
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return eList;
-	}
 
 	@Override
 	public ArrayList<Employee> getEmployee(String name) {

@@ -10,13 +10,13 @@ public interface ErsServiceInt {
 	
 	Employee postEmployee(Employee e1);
 	
-	Employee updateEmployee(String name, String reason, String status, Employee e1);
+	
 
 	Employee updateRequest(Employee e1);
 	
 	ArrayList<Account>getAccount(Account a1);
 	
-	ArrayList<Employee>getOneEmployee(Employee e1);
+	
 	
 	ArrayList<Employee>getEmployee(String name);
 	

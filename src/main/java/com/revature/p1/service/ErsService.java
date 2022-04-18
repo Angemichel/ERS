@@ -20,11 +20,7 @@ public class ErsService implements ErsServiceInt{
 		// TODO Auto-generated method stub
 		return dao.postEmployee(e1);
 	}
-	@Override
-	public Employee updateEmployee(String name, String reason, String status, Employee e1) {
-		// TODO Auto-generated method stub
-		return dao.updateEmployee(name, reason, status, e1);
-	}
+	
 	@Override
 	public Employee updateRequest(Employee e1) {
 		// TODO Auto-generated method stub
@@ -35,11 +31,7 @@ public class ErsService implements ErsServiceInt{
 		// TODO Auto-generated method stub
 		return dao.getAccount(a1);
 	}
-	@Override
-	public ArrayList<Employee> getOneEmployee(Employee e1) {
-		// TODO Auto-generated method stub
-		return dao.getOneEmployee(e1);
-	}
+	
 	@Override
 	public ArrayList<Employee> getEmployee(String name) {
 		// TODO Auto-generated method stub

@@ -17,7 +17,7 @@ public class PutTests {
 		Employee e3 = ed.updateRequest(e1);
 		
 		//Assertions.assertEquals(e1.getStatus(),e3.getStatus());
-		Assertions.assertEquals(e1.getStatus(),e2.getStatus());
+		Assertions.assertEquals(e1.getStatus(),e3.getStatus());
 	}
 	
 	

@@ -7,24 +7,33 @@
 var username=document.getElementById("username").value;
 var password=document.getElementById("password").value;
 sessionStorage.setItem("User", username);
-if(username=="Ange"&& password=="qwe" && document.getElementById("employee").checked == true )
+if(username=="Kyrie Irving"&& password=="ki" && document.getElementById("employee").checked == true )
 {
         //window.open("employee.html");
         window.location.href = "employee.html";
         
     
-} else if (username=="Kevin Durant" && password=="a" && document.getElementById("employee").checked == true){ 
+} else if (username=="Kevin Durant" && password=="kd" && document.getElementById("employee").checked == true){ 
     //window.open("manager.html");
     //window.location.href = "manager.html";
     window.location.href = "employee.html";
 }
-else if (username=="Steve" && password=="Nash" && document.getElementById("manager").checked == true){ 
+else if (username=="Steve Nash" && password=="sn" && document.getElementById("manager").checked == true){ 
     //window.open("manager.html");
     window.location.href = "manager.html";
     
-}else if (username=="S" && password=="Kerr" && document.getElementById("manager").checked == true){ 
+}else if (username=="Steve Kerr" && password=="sk" && document.getElementById("manager").checked == true){ 
     //window.open("manager.html");
     window.location.href = "manager.html";
+}
+else if (username=="Josh" && password=="j" && document.getElementById("employee").checked == true){ 
+    //window.open("manager.html");
+    window.location.href = "employee.html";
+}
+else if (username=="Ben Simmons" && password=="bs" && document.getElementById("employee").checked == true){ 
+    //window.open("manager.html");
+    //window.location.href = "manager.html";
+    window.location.href = "employee.html";
 }
 else
 {
@@ -35,24 +44,16 @@ else
 
 
 function getall(){
-	//window.location.href = "http://localhost:8080/em";
-	//window.location.href = "http://localhost:8080/empl";
-	//document.write("Let's see !!!'");
+	
 	window.location.href = "allresquests.html";
 	
-	//fetch('http://localhost:8080/em')
-	//.then(response => response.json())
-	//.then(json=> displayData(json))
-	//.catch(err => console.log('Request Failed', err));
+	
 	
 }
 
 
 function getit(){
-	//window.location.href = "http://localhost:8080/em";
-	//window.location.href = "http://localhost:8080/empl";
-	//document.write("Let's see !!!'");
-	//window.location.href = "allresquests.html";
+	
 	fetch('http://localhost:8080/em')
 	.then(response => response.json())
 	.then(json=> displayData(json))
@@ -61,22 +62,11 @@ function getit(){
 }
 
 function displayData(response) {
-    //var dataSection = document.getElementById('allDataDiv');
-    var tabl = document.getElementById('allDataDiv');
-    
-   //alert(response.length)
-   //var list=document.createElement("ul");
    
-   	//var list=document.createElement("tr");
-   	
-   	
+    var tabl = document.getElementById('allDataDiv');
+
    for(i=0;i<response.length;i++){
-    //var item=document.createElement("li");
-     //var item=document.createElement("td");
-     
- 
-	 //item.innerHTML=response[i].name +"     "+response[i].amount+"     "+response[i].reason+"     "+response[i].status;
-		
+    
         var row = tabl.insertRow(i)
         
 	    var cel1 = row.insertCell(0);
@@ -87,25 +77,9 @@ function displayData(response) {
 	    cel2.innerHTML = response[i].amount;
 	    cel3.innerHTML = response[i].reason;
 	    cel4.innerHTML = response[i].status;
-	    
-	    
 
-        
-       //alert(response[i].id +" "+response[i].name);
-       /*
-      	 item.innerHTML= response[i].name;
-      	 
-         item.innerHTML= response[i].amount;
-         
-         item.innerHTML= response[i].reason;
-         
-         item.innerHTML= response[i].status;
-         */
-        
-        //list.appendChild(item);
    }
   
-   //dataSection.appendChild(list);
    tabl;
    
 }
@@ -142,12 +116,11 @@ function goBack(){
 	window.location.href = "employee.html";
 }
 
+function goManager(){
+	window.location.href = "manager.html";
+}
 function getone(){
-	//window.location.href = "http://localhost:8080/em";
-	//window.location.href = "http://localhost:8080/empl";
-	//document.write("Let's see !!!'");
-	//window.location.href = "allresquests.html";
-	//var usern = window.opener.document.getElementById("username").value;
+	
 	fetch('http://localhost:8080/emp',{
 		method: 'GET',
 		headers: {'Content-Type': 'application/json'},
@@ -164,4 +137,6 @@ function getone(){
 	
 }
 
-
+function gotologin(){
+	window.location.href = "http://localhost:8080/";
+}

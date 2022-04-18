@@ -9,8 +9,38 @@
 </head>
 <body onload="ansRequest()">
 <div class="w-50 mx-auto">
-<div >Result Goes Here</div>
-<table border ="10" id="allDataDiv">
+<style>
+table {
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color:#808080;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #808080;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+</style>
+<div class = "sidenav">
+</div>
+
+<table border ="1" id="allDataDiv">
 <tr>
 <th>Name</th>
 <th>Amount</th>
@@ -30,6 +60,8 @@
   <input type="text" id="ERstatus" ><br>
   <input type="submit" id="requestSub" value="Save" onclick="putRequest()"> 
 </form>
+<br><br><br> 
+ <button type="button" value="GoBack"  onclick="goManager()">Go Back to Manager Page</button>
  </div> 
 </body>
 </html>

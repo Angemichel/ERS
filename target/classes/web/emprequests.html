@@ -9,10 +9,41 @@
 </head>
 <body onload="vLogin()">
 <div class="w-50 mx-auto">
+<style>
+table {
+  border-collapse: collapse;
+  
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color:#808080;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #808080;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+}
+</style>
+
+<div class = "sidenav">
+</div>
 
 <h3>Request List</h3>
-<div >Result Goes Here</div>
-<table border ="5" id="allDataDiv">
+
+<table border = "1" id="allDataDiv" style= "width:50%">
 <tr>
 <th>Name</th>
 <th>Amount</th>
@@ -20,6 +51,9 @@
 <th>Status</th>
 </tr>
 </table>
+ <br><br><br><br><br><br><br><br><br><br> 
+ <button type="button" value="GoBack"  onclick="goBack()">Go Back to Employee Page</button>
  </div> 
+
 </body>
 </html>
